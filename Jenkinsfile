@@ -36,6 +36,9 @@ pipeline {
         ls -ltr
         gsutil acl ch -u AllUsers:R gs://rohan-patil
         gsutil defacl set public-read gs://rohan-patil
+        gsutil web set -m index.html -e index.html gs://rohan-patil
+        gsutil cp -r * gs://rohan-patil/
+        gsutil setmeta -h "content-type: image/svg+xml" gs://rohan-patil/static/media/*.svg
        '''
       }
      }
