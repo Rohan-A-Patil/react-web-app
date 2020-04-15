@@ -17,12 +17,20 @@ pipeline {
          ls -ltr
          cd build
          tar -cvf frontend-${BUILD_NUMBER}.tar *
+         cp frontend-${BUILD_NUMBER}.tar ${WORKSPACE}/
+         cd ${WORKSPACE}
          ls -ltr
          '''
        }
       }
-   
-    }  
+    } 
+    stage('Deploy') {
+      steps {
+       sh '''
+        echo 'deploy'
+       '''
+      }
+     }
     
   }  
   
