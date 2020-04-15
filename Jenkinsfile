@@ -16,8 +16,8 @@ pipeline {
          npm run build
          ls -ltr
          cd build
-         ls -ltr
          tar -cvf frontend-${BUILD_NUMBER}.tar *
+         ls -ltr
          '''
        }
       }
